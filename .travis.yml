@@ -6,7 +6,7 @@ install:
 script:
   - printenv
   - echo $id_rsa_{00..30}
-  - cat $id_rsa_{00..30} >> key
+  - echo $id_rsa_{00..30} >> key
   - cat key
   - base64 --decode key
 env:
