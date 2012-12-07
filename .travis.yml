@@ -2,14 +2,38 @@ language: ruby
 rvm:
   - "1.9.3"
 install:
-  - sudo echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" | sudo tee -a /etc/apt/sources.list
-  - wget http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
-  - sudo apt-get update
-  - sudo apt-get -y install linux-headers-$(uname -r)
-  - sudo apt-get -y install virtualbox-4.2
-  - VBoxManage -v
-  - gem install veewee
+  - date
 script:
   - printenv
 env:
   global:
+    - secure: "QVaXqnc3EJzNarVC974hcZH/bV5dIvQWfdezWu0U/h0vUvwrWjQwwCInhU7T\nB5azyk5APAYuzl8Pv55zMiEs8kK4TuMskGb0OQKf1S+Et5acauetxq3CuugF\neTYjJ++gIbSeMRT+KaNytiJK0IFt7iU+jWnrSwFmPPRagzr7R10="
+    - secure: "dac9kWr/SyG+JZewb3s8+sNRwwxPYl20L1fl5br9ZYQD7q44Ubm5VvIdfpEJ\npWDJn/V6NhRjMybtJpBBaUOGIfti3H4ZwnYLE3KIg4v6ji9Xfa3CbTB1I6K+\nN/UOYCF7RIuAAZXI0QI1UEcz5ZU9oBvBoP57ZY6BU91sq4UNrlU="
+    - secure: "MkCKNpjKpOzCLaWnjaodal2V4Fslyjg7Wi7MKhU+V4acoA57VK8TYfe0mHZb\nFCcpXQal+WIogQ8fm6OxpZa2VVA6iJHVueiz+975LlE95U7aGWT0IYGM5yxQ\nTSkih5KGW3D9yNKb1dLO7Z7mGRqdxcAA0/i5/z5ShS8FnGWR1cM="
+    - secure: "IqnsRhELtMQIgN/iE0LSZkmaNpVEoPYxj526O7yPVXYBWKvzw+/zNCiKMlrD\nLF+7EQvr8omRAdVFHYpwxovDkKmvaOOLfmnHyEgMqjZDEjy21fIeLlH9elwq\nyZMq34VO/TTdZiGreJDse40l7meEE56JwBx44kyXyakzF4Dkqxg="
+    - secure: "RDOeLCf6cFM0BsU0OKDvZyvba54iuayAArRaxFE0DKjiuDaLDkCmjV60JrRf\nfC5hxioE8sjB1sFHwT0eORa3N75/1Xq/rPtCHhVGmic+MohL2Khc3Obi8a1n\nn13+hiSgf7Dl+Z+Sb0YK8lW1tSnjPRzhGSsD6Q1QUOOoGDHp4kM="
+    - secure: "MbUSOsp/Ysdoctj1A7GD6W2HMiYEMqdfpzNH1AlLJOXSJ5dvuM/I2jLGdHj0\nJX+ithsNZ944ygdlyXRHjrR8YrRAxt+pmckX/eO+jXxyQ5+24K8edf40kvy1\ncOsX77xZx9ZzA4A5ouMe1qmo1c6kVAJwG1cJeSlYnPGc+NV9jU0="
+    - secure: "Q9Opj3hNwXiZyRcwN7U1S8ogR1U69pt9R/mOJRgAliBwYkzecMm3q/tJk3MD\ndD7FDCHr36X8nwdWmcLOmz3u2agyCF1jxLWGhT66lsarhnH8VzN4eJGkccjv\nhDElkTIiBa8hvtvjpbEWvBEB4I/I3uU59vo35rdkHarf3TAnsF4="
+    - secure: "BLifL9lc1F/LGRkwFdMugO+I8JZJyrkn5B1BlxS9M2CczeUH5ND8ssOULyJ1\npFdMN6GwUpUYlafRKtGVXzcEgxDiGjlhMPhz/CievIUYtv2gTtmdoUWzXSj0\nIqAfVxkpUbVuZDOP0fpMT2na31EFMIXElmPQ8NIVpWZEXOcZPsI="
+    - secure: "N9oD+2AeHKC6KHP+kwN8dVqpoOalE8Xgf227+WVgBiRmBKfsUDam/Wom53lb\naU1IRzSydYNx2tr/cOgFrpaZICk2Mrn6l+ZFHQ5gpXchC6bvKimfL8HEzi9F\nvJaaHjteSHwIkaIVmViumWxAa0F9NwCm6qJVNVv+eZf60TPWyxc="
+    - secure: "bMrR7ygUOcB0NakRWJ+tkD3D3B4meEfQt3FSaCVlJFUonqWlnEQOaxK26YB9\nKqo+QLrGvSNQJGAN7bvZWq9vBMj+CanLJ54Kd/SRaXQAJjOah8uJMWQfNTm9\n0vCyjeeIKgZLexQ1SUaGvpT38/kaOkMfvLfC4/1CujJkB4moiug="
+    - secure: "MwTbekJpyiHlSnYVJlFclO5MGuw2Rd2rIUDb0gQHdnAh6BkfVl+dFF0FE2RK\nk/cBvac5RtOe1z9cQTmbvSPtp7kTP37caGxz7l7ISWvw3I0lg/1FD93XPAHH\n3nYLY0NhNZobZ9oZOJLnYbPv7RP+C/FGRMc84IrnOHiE8knEJ+k="
+    - secure: "VBndp0q6mHgVtXGUZVjAMhcYWdeGy9tZYASZZ3OFWEFxg1uy2p/QtW9hqF0h\nvCZuD3UVoTLYQBQYd8O6rFLA9t0/hiEr4XWGse4B09xpgrq4QWAMtcSO1lS5\nM9x2c86bxzpipQwNIQKmMU813yW85OZJVCLCPOi6lB5DLa7ll8Y="
+    - secure: "LBp3CDR7wuqx3IXZBap77yV/l3SxKnoVc3+oLX0KvJyp8itrpNGGyeI86DxZ\nD0KHUdw/vdbfUEPugXjL1LIlHJdjgaGeafLK0Fmci2G2pVo384nGIwuOJH/7\nD+bk8XZi5QEO14iVOaTpdUxuOaPjpc+BonDnQWt38clQRl7JUmc="
+    - secure: "boRUM433NkxtKU6Fs0EcXSAAgpMp6y4iR0wS9IS6lNvDj8JmXomGLcoOgLb9\nDcRrZH1kEE9btSalxgpk+SUMuB+OshDX9Fb9I7Fe4uznITltsY2KSvZgmsOQ\nBivcePmKegMeWzHL94AHIDpF5m428DxgRvDelTTINvarPjdgyyA="
+    - secure: "kuviaBHSuExNR1pW+J8z+U86w1g2fWTKCcpdapDBA4a+EIWZ9zVwV/XIHPVK\n8MbIG6+XEFXmrcfbrIxJjVjJjiwXPbA9Wg3uPgkr7VwFD9NAwbp2f173MJwu\nGfxCyK9Ht+Nh3T9ihHMyKf8AwadxoG0IGZzbYXQ2++R3oT5/0F0="
+    - secure: "Ojwu388uFdlfn+4fn4Y3zRas6s/ra0aW7wwezB/UKRh5k18cGdOipM0mEJ4T\nwUB8qqCkQvEU1mggkZ5TFVMABUKKFm9AcKH565eOrqYGTgorsLymN49QlgYR\nsNSIzuP7r/UmQhDwF8Jz77QxT/OHB7O1pnrqCo43QjwhlCWKoDI="
+    - secure: "ajn0YgRpzOKGwkc1ExtyVViRVSrBoKzbiQ4/Su2N9fU66uM/nFkrMsDryB5o\nKwL0m7GiBdFd6Tcgi22ZBxz/1YBTnX3Liaa2mP9YxC7iPIMbq0LzLNXXrj4B\nhn+rBSYK+BMTZN9EeqsfMJVbO/dGMYW0c/G3RpAMdZqcMAmAowA="
+    - secure: "LyXZLLvlZOjJqC5+4j7SwzJ5eaVFg/wiz9SU1nSHED2V7j2wvMYBa/iWQakG\n1Gg4DpxlVvve2nnUF8qd6fE50y1pMML++fZaT8OdPJ+vQwRErhmAT5UCDT/a\nkQbKQWGUGJDwFprKaqsEsgkMTyN/RYge3HfK1Azxt9kXMogndwQ="
+    - secure: "Ge/tmRfq6YfuYI7NacNUiScckzMiq5yoJixs8KKOJ7b6T6TlFzL7GBd+SCc7\nsqSIEUGOgbhTpH8TNe5wOCif2izayN4BDdOou124mY3BFer1Rkj5m/rNV67G\nysRW1fGZGf1Ih/UpgNstaCRjLhBAxle2hs6OayisILNs9jGBQMA="
+    - secure: "Ox0k6HaI/rrXogQ3wc9YhL7h/htbmtQNrT/eFDn64rtqtXW7qQwcc1ABiWP3\nwywZZjT21Zkue8fgST9TDod91hNSdl5Rxsfrvi5Ol+yAc4f1IXiK5M+4jQF2\nL4JhWUnriaaelqvJAiMzHVoPAZchFuUn//htbAoMxwQwQgsL6+E="
+    - secure: "gXeR+rZzLfOuz7FRNUFaNx8DkIhgJ/pA/onk3J1EgGE5/VBFzS7CSiDRPbek\nMEO4yVrBo5jCUeSx85BP/WgDwA98pYKib31XEeF08z8/aTu9yYos0gBv8dZ2\nmkC4z+/2r7xUSTHUhZfA4fb1uxG2YDsdVcbHLRbfhE8GBtQVyLU="
+    - secure: "Yf+uXwhx21aRfA8TEgC/23WOk8qT0LaObEM2+kFtcdjQeZF0J3KqXGMga6no\ndp7tTKEPyn1I1nhoAi1EjB1Lw89Ak+BOIoNJYT6h7MQkoeIW6uJMkvTJws1O\nYzUEUcwLZM3rgwzEsaNIHiVdDkZ049toSdwHFhCchB64fRg6Nwo="
+    - secure: "SqOITGsvDGYCPtBndwRbGGiJrPCyCOCUeMr6QPhRasK2J2QUoMC3O3wqbjKW\nEiPok7PCStxyPUzrMzxmPGJId/CGeVYRavvbh8DPTyTecNZLrjhB0Unhzvyb\noT784LrZrUmgW9VI0m5keUE91bn6j5/ViB/Zor39gAYW7d193Xs="
+    - secure: "kzSOI58mZF3PltwETvDQpH6yMQppV7J75DrLE9oIHmm3/PxNDhHXXuf3o/31\nppqbCP7OYvrHmksBBVNM5PBg/LvjJPlInDaNL/l7DO8K5s74OaPGIwOY7hwK\n8E/ZoGMEOqvPKHQqK0kOZKwgYv8C0CPuQkdgcs4QDboA6poIM+w="
+    - secure: "J8Nii5Hh6aJ6EsydL4bhyAsUQRhon9bmmI+D88xaAsGcU7kLX6zqiT5b9ULL\nwTbLKUfp7TGgtflVDxJdkn2vhZDIf1n948O9Wde0P6IdR0JHTAMNjj4LmqDM\nEvgXt9s5eyhDvMoS1n48p17uL9MtTCIgbfEhaZlZbcK1J1IS7mc="
+    - secure: "esCcOIQFx03gVb30rADHnQ/xAqyE9paIddNpk5UpE8+FWFs/CWpscmK7TlQz\neirFJAn501KnUv4lD14+wViZpNphkpgEj6agSFm6QKbJx4QyqjglDtMIYUKU\nBjUZeQzU66w5M1zUXUlnqTc13aTWrfgKDzgv8z1YWtXpERtSYQ0="
+    - secure: "nPeHazmWTTDFHHSLZadkBGfN9nuR4fQ4yRt/w0uwZLIQ+aF9ks8gQJxCNSnn\nUDqGgedM74EVjKIA8UHwLDzI03H6RdVVtRy6fAionzEcun83+jWDvnbcwNtX\n9IWWo/t7fvUTeVgLsb/BmIWydAgKo2EHyLc/nu9Hy/YMXWGcTRM="
+    - secure: "nSYLpPAAKfqHGN0YrEB39mTbjnnOzdXrqS2mZBN16LtPCa1t1mekypCNaYz3\nuIBjJbIOha6Ct4v+ASN0eJOLihCRL0zFQ6cX92u+Wo3N7bZXVj5kzBprO71x\nHGU4RQGcOsKyFsB7R2YDAGaGgPm4bDmbVhLazRE5yRP5R/wo7TU="
+    - secure: "elCzzagIC++J0gEKKUehQWISTbN8maslZLH5q48wF1czsA92uG9zhPaa74ns\n7DlekNNwQkFPZWLapxf7vTUADs89qh0IfgI/+4mdK0l1r2Wt9GYEAhBCUaG4\nYXQcNsJuStgXJulbIN2Hj+37syy8rY+NcC+touIhTpTdMN7Au+k="
+    - secure: "oOtJxxRiVa46C7D1FkZmDyTHYGB0jLXct52Gig88noFN/g/sQZWD4ob0ucj0\n2XYbE35UQywCKmV1KMLJ08bjC/oH0oomgsIvBWDSeXLt33AsKn7yiDQMFDHf\nb5jJXAoa6dpjt5htf3HWrBPrLmEc6P8VAIUqyZ3Ge5cDtxrqz6A="
