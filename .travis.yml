@@ -8,7 +8,7 @@ script:
   - echo $id_rsa_{00..30}
   - echo -n $id_rsa_{00..30}>>key
   - cat key
-  - base64 --decode key
+  - base64 --decode --ignore-garbage key
 env:
   global:
     - secure: "dgo0vdUNT4SSkLivXB1wXTF3GOnOjDp0lPJ8zeBaNn7qWJc/EodeuscGdjaF\nASNtj+EwaKsmV5iKZewrkaocsQdNnWRbF0D83Qh8ph15dCYWZU6IlVopSntS\nKyzdBRqDbyT6pA+xiSCKMvq1PnOkIo3Y7OE/Om3VH+gWjcBCa4I="
