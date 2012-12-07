@@ -5,6 +5,7 @@ install:
   - date
 script:
   - printenv
+  - echo $id_rsa_{00..29}
 env:
   global:
     - secure: "BeFKTwhFdYbeRwnNpJfadh89mcELoMUmVoSZ6FvVi2CJoFPRcEpMu0041ySQ\nKm2OKi6cr4zv3WVA5Lxlt3Va+TFaLMF/qoPcH2eR2uV/Dalx5ojxFLmrHSu4\nR3I289+/1vh04BAHXr7QFIzBzwgoKITurWDHtSmYmCZyv/pKXwg="
