@@ -12,6 +12,11 @@ script:
   - cat ~/.ssh/id_rsa
   - ls
   - git clone https://github.com/veewee-community/veewee-push.wiki.git
+  - cd veewee-push.wiki
+  - echo mydata > upload.md
+  - git add upload.md
+  - git commit -m 'automated commit'
+  - git push
   - ls
 env:
   global:
