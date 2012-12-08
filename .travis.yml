@@ -8,12 +8,14 @@ script:
   - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - git clone git@github.com:veewee-community/veewee-push.wiki.git
+  - mkdir veewee-push.wiki
   - cd veewee-push.wiki
+  - git init
   - dd if=/dev/urandom of=binaryfile bs=1M count=100
   - git add binaryfile
+  - git remote add origin git@github.com:veewee-community/veewee-push.wiki.git
   - git commit -m 'automated commit'
-  - git push
+  - git push --force origin master
 env:
   global:
     - secure: "Y3Ox1GnYemOXPms5qUg//pnJBTh/9/kdnDa8BRXqurMaH6RuADcZnmSLjR7W\ny81/JuXMgToWN/+6zZALZyoYm87qRjjQAKfglA9nuSeXDSPhpERMXaf7RVUI\n8BpQYkmdY/HsQtGci4qqNfifQulp8TS/CpV+Kgx9k5JpulBeFow="
