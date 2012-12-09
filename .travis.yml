@@ -7,4 +7,4 @@ script:
   - ./script.sh
 env:
   global:
-    - secure: "E/ELvYIERgqziEleafuLpjn25smY8GHwW6CMDHJ0V7p7dLPsn1QmxbjjGs//\ny4MCOLXuMycIzhuCj9vckXuekIARENto2Iz+Gdz+G++NgSH4VCFGHNg3X5MU\nHxqETgB/8ZrzQQC327lNER08h+u8LMIfkT1VBGMpnDMd50mP8Q8="
+    - secure: "NPnFHyo6KAzebxKVgiAlf543IDRTyXR5ZL1cnuQ09q0BJmC+iSgcB6TIcy+v\n+Z8ik/2zsYahMx55SO0nmXQE1H/RWNYbioUivR3invdCII99LvfAtTPdAT08\nO2jYNbHJ+RAUU20bd4e2l+4hPYNKypuZxWhI+rsfKSSD3ElJ+B8="
