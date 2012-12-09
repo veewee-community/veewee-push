@@ -1,2 +1,2 @@
 echo Hello World
-echo $VEEWEE_OAUTH_TOKEN
+curl -u veeweebot -H "Authorization: bearer $VEEWEE_OAUTH_TOKEN" -d '{ "description": "the description for this gist", "public": true, "files": { "file1.txt": { "content": "String file contents" } } }' https://api.github.com/gists
